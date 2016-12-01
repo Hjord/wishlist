@@ -1,0 +1,23 @@
+<header>
+    <h2>{{wish.name}}</h2>
+    <p>
+        {{wish.description}}
+    </p>
+    <p>
+        {{wish.location}}
+    </p>
+</header>
+
+<form *ngIf="wish" (submit)="saveWish()">
+    <label>Title</label>
+    <input type="text" [(ngModel)]="wish.title" name="title">
+
+    <label>Description</label>
+    <input type="text" [(ngModel)]="wish.description" name="description">
+
+    <label>Store</label>
+    <input type="text" [(ngModel)]="wish.store" name="store">
+
+    <button type="submit">Save</button>
+    <a [routerLink]="['/']">Cancel</a>
+</form>
